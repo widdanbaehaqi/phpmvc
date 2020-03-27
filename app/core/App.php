@@ -10,9 +10,9 @@ class App {
     public function parseURL()
     {
         if( isset($_GET['url']) ){
-            $url = rtrim($_GET['url'], '/');
-            $url = filter_var($url, FILTER_SANITIZE_URL);
-            $url = explode('/', $url);
+            $url = rtrim($_GET['url'], '/');                //untuk menghapus '/' di akhir url.
+            $url = filter_var($url, FILTER_SANITIZE_URL);   //bersihkan url dari karakter-karakter aneh
+            $url = explode('/', $url);                      //pecah url dengan delimiter '/'
             return $url;
         }
     }
